@@ -16,9 +16,13 @@ prof_id = 0
         prof_id = Teacher.first.id
 
         puts "Cadastrando linguagem #{i+1}"
-        Language.create(name: Faker::ProgrammingLanguage.unique.name, teacher_id: prof_id)
+        if i == 0
+            Language.create(name: Faker::ProgrammingLanguage.unique.name, teacher_id: prof_id)
+        else
+            Language.create(name: Faker::ProgrammingLanguage.unique.name, teacher_id: prof_id + 1)
+        end
     end
-    
+
     if i == 2
         ++prof_id
     end

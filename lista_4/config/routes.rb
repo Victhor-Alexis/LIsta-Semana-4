@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       scope 'teachers' do
         get 'index', to: 'teachers#index'
         get 'show/:id', to: 'teachers#show'
+        get 'my_students/:id', to: 'teachers#my_students'
         post 'create', to: 'teachers#create'
         patch 'update/:id', to: 'teachers#update'
         delete 'delete/:id', to: 'teachers#delete'

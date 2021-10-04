@@ -36,6 +36,14 @@ class Api::V1::TeachersController < ApplicationController
         head(:bad_request)
     end
 
+    ######################## Questão extra ##########################
+    def my_students
+        alunos = Student.where(teacher_id: params[:id])
+        render json: alunos, status: 200
+    rescue StandardError
+        head(:not_found)
+    end
+
     private
 
     def prof_params

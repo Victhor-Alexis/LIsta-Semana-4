@@ -24,7 +24,7 @@ prof_id = 0
     end
 
     if i == 2
-        ++prof_id
+        prof_id += 1
     end
 
     puts "Cadastrando aluno #{i+1}"

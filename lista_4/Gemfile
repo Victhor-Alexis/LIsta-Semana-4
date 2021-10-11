@@ -44,3 +44,10 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'validates_timeliness', '~> 4.0', '>= 4.0.2'
 
 gem 'faker'
+
+# Autenticação de usuário
+gem 'devise'
+gem 'simple_token_authentication', '~> 1.0'
+
+# Padronizar resultados
+gem 'active_model_serializers'

@@ -1,4 +1,7 @@
 class Api::V1::LanguagesController < ApplicationController
+
+    acts_as_token_authentication_handler_for Admin
+
     def index
         langs = Language.all
         render json: langs, status: :ok

@@ -5,4 +5,6 @@ class Student < ApplicationRecord
   validates :email, uniqueness:true
   validates_length_of :registration_number, is: 9
   validates_date :birthdate, on_or_before: lambda {Date.currrent}
+
+  has_one_attached :photo
 end

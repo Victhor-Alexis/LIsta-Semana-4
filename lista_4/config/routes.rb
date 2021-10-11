@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins, skip: :all
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace 'api' do
     namespace 'v1' do
@@ -26,6 +27,14 @@ Rails.application.routes.draw do
         patch 'update/:id', to: 'languages#update'
         delete 'delete/:id', to: 'languages#delete'
       end
+
+      scope 'admins' do
+        get 'login', to: 'admins#login'
+        get 'show', to: 'admins#show'
+        get 'logout', to: 'admins#logout'
+      end
     end
   end
+
+  get 'authentication_failure', to: 'application#authentication_failure', as: :authentication_failure
 end

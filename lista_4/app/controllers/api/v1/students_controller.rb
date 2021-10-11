@@ -1,4 +1,7 @@
 class Api::V1::StudentsController < ApplicationController
+
+    acts_as_token_authentication_handler_for Admin
+
     def index
         students = Student.all
         render json: students, status: 200
